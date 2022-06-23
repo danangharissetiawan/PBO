@@ -1,5 +1,11 @@
 package com.risset;
 
+//import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.*;
+
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
@@ -9,6 +15,11 @@ import java.awt.event.MouseEvent;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 public class FormNilaiMhs extends JFrame {
 
@@ -39,9 +50,11 @@ public class FormNilaiMhs extends JFrame {
     private JTable table;
     public JPanel FormNilaiMhsPanel;
     private JButton keluar;
+    private JButton cetakBtn;
 
 
     public FormNilaiMhs() throws SQLException {
+
         table1 = new DefaultTableModel();
         table.setModel(table1); // set model table
         for (String s : Arrays.asList("No", "NIM", "Nama", "UTS", "UAS", "Tugas", "Nilai Akhir", "Nilai Huruf", "Predikat")) {
@@ -126,7 +139,17 @@ public class FormNilaiMhs extends JFrame {
         keluar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                keluarActionPerformed();
+                System.exit(0);
+            }
+        });
+        cetakBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    cetak();
+                } catch (JRException ex) {
+                    ex.printStackTrace();
+                }
             }
         });
     }
@@ -147,6 +170,22 @@ public class FormNilaiMhs extends JFrame {
             row[7] = list[i].get(6);
             row[8] = list[i].get(7);
             model.addRow(row);
+        }
+
+    }
+
+    private void cetak() throws JRException {
+        JasperReport reports;
+        String path=".\\src\\report\\ReportFromNilaiMhs.jasper";
+        try {
+            reports = (JasperReport) JRLoader.loadObjectFromFile(path);
+            JasperPrint jprint = JasperFillManager.fillReport(path, null, con);
+            JasperViewer jviewer = new JasperViewer(jprint, false);
+            jviewer.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            jviewer.setVisible(true);
+            System.out.println("Masuk try");
+        } catch (JRException ex) {
+            Logger.getLogger(FormNilaiMhs.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
@@ -240,7 +279,7 @@ public class FormNilaiMhs extends JFrame {
 
     private void tambahActionPerformed() {//GEN-FIRST:event_tambahLainActionPerformed
         kosongkanText();
-        btnProses.setEnabled(false);
+        btnProses.setEnabled(true);
 
         // tidak bisa diketik
         nUTS1.setEditable(false);
@@ -265,15 +304,12 @@ public class FormNilaiMhs extends JFrame {
         simpanBtn.setEnabled(false);
     }
 
-    private void keluarActionPerformed() {//GEN-FIRST:event_keluarActionPerformed
-        dispose();
-    }//GEN-LAST:event_keluarActionPerformed
 
     private void updateActionPerformed() {//GEN-FIRST:event_updateActionPerformed
         String updateQuery = null;
         PreparedStatement ps = null;
 
-        updateQuery = "UPDATE mahasiswa SET nama = ?, nilai_uts = ?, nilai_uas = ?, nilai_tugas = ?, nilai_akhir = ?, nilai_huruf = ?, predikat = ? WHERE nim = ?";
+        updateQuery = "UPDATE mahasiswa SET nim = ?, nama = ?, nilai_uts = ?, nilai_uas = ?, nilai_tugas = ?, nilai_akhir = ?, nilai_huruf = ?, predikat = ? WHERE nim = ? ";
 
         try {
             ps = con.prepareStatement(updateQuery);
@@ -353,7 +389,7 @@ public class FormNilaiMhs extends JFrame {
     public static void main(String[] args) throws SQLException {
         JFrame frame = new JFrame("Form Nilai Mahasiswa");
         frame.setContentPane(new FormNilaiMhs().FormNilaiMhsPanel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
     }

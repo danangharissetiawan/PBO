@@ -20,25 +20,26 @@ public class FormBeranda extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                JFrame frame = new JFrame("Form Nilai Mahasiswa");
-                try {
-                    frame.setContentPane(new FormNilaiMhs().FormNilaiMhsPanel);
-                } catch (SQLException ex) {
-                    ex.printStackTrace();
-                }
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.pack();
-                frame.setVisible(true);
-                dispose();
+               JFrame frame = new JFrame("Siakad");
+               try {
+                   frame.setContentPane(new FormNilaiMhs().FormNilaiMhsPanel);
+               } catch (SQLException ex) {
+                   ex.printStackTrace();
+               }
+
+               frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+               frame.pack();
+               frame.setVisible(true);
+               dispose();
             }
         });
     }
 
 
     public static void main(String[] args) {
-        FormBeranda frame = new FormBeranda();
+        JFrame frame = new JFrame();
         frame.setContentPane(new FormBeranda().FormBerandaPanel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
     }

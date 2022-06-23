@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReportNilaiMhs" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="25f03c03-40b8-41f4-b819-a737b0a8d0df">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="laporan_db"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[select * from mahasiswa
+]]>
+	</queryString>
+	<field name="id_mhs" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id_mhs"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_mhs"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mahasiswa"/>
+	</field>
+	<field name="nim" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nim"/>
+		<property name="com.jaspersoft.studio.field.label" value="nim"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mahasiswa"/>
+	</field>
+	<field name="nama" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nama"/>
+		<property name="com.jaspersoft.studio.field.label" value="nama"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mahasiswa"/>
+	</field>
+	<field name="nilai_uts" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="nilai_uts"/>
+		<property name="com.jaspersoft.studio.field.label" value="nilai_uts"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mahasiswa"/>
+	</field>
+	<field name="nilai_uas" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="nilai_uas"/>
+		<property name="com.jaspersoft.studio.field.label" value="nilai_uas"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mahasiswa"/>
+	</field>
+	<field name="nilai_tugas" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="nilai_tugas"/>
+		<property name="com.jaspersoft.studio.field.label" value="nilai_tugas"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mahasiswa"/>
+	</field>
+	<field name="nilai_akhir" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="nilai_akhir"/>
+		<property name="com.jaspersoft.studio.field.label" value="nilai_akhir"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mahasiswa"/>
+	</field>
+	<field name="nilai_huruf" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nilai_huruf"/>
+		<property name="com.jaspersoft.studio.field.label" value="nilai_huruf"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mahasiswa"/>
+	</field>
+	<field name="predikat" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="predikat"/>
+		<property name="com.jaspersoft.studio.field.label" value="predikat"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mahasiswa"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="110" y="40" width="330" height="39" uuid="23f76282-ca26-4cb6-9665-862c044544f6"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Jalan Imam Bonjol No. 207, Pendrikan Lor, Semarang Tengah, Kota Semarang, Jawa Tengah, 50131]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="80" height="79" uuid="1a0ba17e-3c36-4e7a-87e8-80898d9ebe68"/>
+				<imageExpression><![CDATA["C:/Users/mrdan/Downloads/Logo UDINUS FIK.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="87" y="10" width="380" height="43" uuid="1dccd647-740f-4549-8dda-8cef30262669"/>
+				<textElement textAlignment="Center">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Universitas Dian Nuswantoro]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="-1" y="21" width="67" height="30" uuid="651c0a18-2a80-4bb2-9800-3e3ea4c699a1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e38bdc94-6714-4b92-8b78-d93912f0a268"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="66" y="21" width="61" height="30" uuid="63d1360d-9e50-4fd4-b6fd-a2a44114a984">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="499a2bd8-65a6-4181-a4f8-3e81d3145b13"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NIM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="127" y="21" width="61" height="30" uuid="9e2d9426-06ee-42d6-8bed-22c39127b6fd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="00c04ce3-566b-4564-a43c-ce0d775bbb99"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="188" y="21" width="61" height="30" uuid="9ebba3a8-21f4-4b0a-aed5-0cc59a0ff9f6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c350948d-0675-4463-a32e-0f58eed93fc8"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nilai UTS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="249" y="21" width="61" height="30" uuid="14454984-068d-415c-a378-6a5484241ce0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e0f345a9-1d26-4e7d-9ff7-d529dcafe001"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nilai UAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="21" width="61" height="30" uuid="bed1516d-2076-4836-a8af-574f08c0d7ef">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="768d8c54-1874-40c0-b0ea-be8d0645f4d3"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nilai Tugas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="371" y="21" width="61" height="30" uuid="466bc2f4-f5f0-45d6-bbf5-963792f214de">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="68f6fd6b-4cf2-4846-a243-405907508078"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nilai Akhir]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="432" y="21" width="61" height="30" uuid="a53c7c35-0c92-4acf-a588-835df8549008">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1c39ce59-e055-4a50-bb75-f34e9b7c8b2f"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nilai Huruf]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="493" y="21" width="61" height="30" uuid="da51ca71-6ba7-4cc9-8fa1-4087010247fa">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c6c0eb1b-c255-4a46-900f-f6269cdc190f"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Predikat]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="-1" y="10" width="67" height="30" uuid="18fdabf6-5afd-4127-bd63-e621d52edb18">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e38bdc94-6714-4b92-8b78-d93912f0a268"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{id_mhs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="66" y="10" width="61" height="30" uuid="9f73bb57-dfc0-4205-9bb8-f02bc64658a8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="499a2bd8-65a6-4181-a4f8-3e81d3145b13"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nim}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="127" y="10" width="61" height="30" uuid="ce73af6b-397f-4950-89eb-f4e4f37e8a5a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="00c04ce3-566b-4564-a43c-ce0d775bbb99"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="188" y="10" width="61" height="30" uuid="aa76eb93-f387-4a1c-89ad-ade83cd158d6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c350948d-0675-4463-a32e-0f58eed93fc8"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nilai_uts}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="10" width="61" height="30" uuid="19f2d68f-80d0-4244-9f61-e442c1134494">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e0f345a9-1d26-4e7d-9ff7-d529dcafe001"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nilai_uas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="10" width="61" height="30" uuid="d88da360-bb36-4b1c-9318-d2b907ee7da3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="768d8c54-1874-40c0-b0ea-be8d0645f4d3"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nilai_tugas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="10" width="61" height="30" uuid="75a52dd4-cec4-486c-a720-cb6303c9f5f6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="68f6fd6b-4cf2-4846-a243-405907508078"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nilai_akhir}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="432" y="10" width="61" height="30" uuid="f3e5b3f2-abea-47e9-94e8-78a05fda9494">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1c39ce59-e055-4a50-bb75-f34e9b7c8b2f"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nilai_huruf}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="493" y="10" width="61" height="30" uuid="1cfff81d-6f42-4d75-a6f6-bafee2dafb22">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c6c0eb1b-c255-4a46-900f-f6269cdc190f"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{predikat}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>
